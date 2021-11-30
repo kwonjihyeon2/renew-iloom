@@ -15,7 +15,7 @@ $(function(){
 })
 
 //main slide swiper
-var swiper = new Swiper(".mySwiper", {
+var swiper = new Swiper(".main-Swiper", {
     // autoplay 나중에 넣기
 });
 
@@ -27,21 +27,36 @@ $('.set-bg').each(function () {
 
 
 //recommand swiper
-var onSwiper = new Swiper(".product-swiper", {
-    slidesPerView: 1,
-    spaceBetween: 30,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        clickable: true,
-    }, breakpoints:{
-        1200:{
-            slidesPerView:3,
-        },
-        991:{
-            slidesPerView:2.5,
-        },
-        539:{
-            slidesPerView:1.5,
-        }
-    }
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var onSwiper = new Swiper(".product-swiper", {
+//     slidesPerView: 1,
+//     spaceBetween: 30,
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         clickable: true,
+//     }, breakpoints:{
+//         1200:{
+//             slidesPerView:3,
+//         },
+//         991:{
+//             slidesPerView:2.5,
+//         },
+//         539:{
+//             slidesPerView:1.5,
+//         }
+//     }
+// });
