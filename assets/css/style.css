@@ -42,7 +42,7 @@
     border-radius: 0 0 30px 30px;
 }
 .red-active{
-    color: red;
+    color: #C80A1E;
 }
 .nav-item h1{
     font-size: 18px;
@@ -69,12 +69,7 @@
     width: 100%;
     position: relative;
 }
-.title{
-    text-transform: uppercase;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #f6f6f6;
-    word-break: keep-all;
-}
+
 .product-swiper{
     overflow: hidden;
     margin-left: auto;
@@ -102,7 +97,7 @@
 }
 
 .product-swiper-text p{
-    color: red;
+    color: #C80A1E;
 }
 
 .product-swiper .swiper-slide:hover img{
@@ -126,14 +121,22 @@
 /* recommand section end */
 
 
+
+@media (min-width:1500px){
+    .recommand .swiper-button-next {
+        left:500px;
+    }
+}
+
+
 @media (max-width:1300px) {
     .recommand .swiper-button-next{
-        left: 10%;
+        display: none;
     }
-    .swiper-button-next img{
+    /* .swiper-button-next img{
         width: 100px;
         height: 100px;
-    }
+    } */
 }
 @media (min-width:992px) and (max-width:1199px) {
     
@@ -143,9 +146,9 @@
     .left{
         margin-left: 0;
     }
-    .recommand .swiper-button-next {
+    /* .recommand .swiper-button-next {
         display: none;
-    }
+    } */
 }
 
 @media (max-width:770px) {
