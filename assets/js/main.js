@@ -28,10 +28,20 @@ $('.set-bg').each(function () {
 
 //recommand swiper
 var onSwiper = new Swiper(".product-swiper", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
-    // pagination: {
-    //   el: ".swiper-pagination",
-    //   lickable: true,
-    // },c
+    navigation: {
+        nextEl: ".swiper-button-next",
+        clickable: true,
+    }, breakpoints:{
+        1200:{
+            slidesPerView:3,
+        },
+        991:{
+            slidesPerView:2.5,
+        },
+        539:{
+            slidesPerView:1.5,
+        }
+    }
 });

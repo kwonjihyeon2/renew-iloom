@@ -64,35 +64,108 @@
 
 /* slider section end */
 
-/* recommand sectio start */
+/* recommand section start */
 .recommand{
     width: 100%;
+    position: relative;
 }
-
 .title{
     text-transform: uppercase;
     padding-bottom: 30px;
     border-bottom: 1px solid #f6f6f6;
+    word-break: keep-all;
 }
-
-.details{
-    align-self: flex-end;
-    padding-bottom: 80px;
-}
-.details h5{
-    font-size: 36px;
-    font-weight: 600;
-    padding: 30px 0;
-}
-
 .product-swiper{
     overflow: hidden;
     margin-left: auto;
+    margin-right: 0;
     margin-top: 30px;
     width: 100%;
-    margin-right: 0;
-    margin-left: auto;
 }
 .product-swiper .swiper-slide{
     overflow: hidden;
+    position: relative;
+}
+.product-swiper .swiper-slide img{
+    width: 100%;
+    filter: brightness(0.8);
+}
+.product-swiper-text{
+    position: absolute;
+    bottom: 5%;
+    left: 10%;
+}
+
+.product-swiper-text h1{
+    font-size: 20px;
+    color: #fff;
+}
+
+.product-swiper-text p{
+    color: red;
+}
+
+.product-swiper .swiper-slide:hover img{
+    transition: all 0.5s;
+    transform: scale(1.1);
+    filter: brightness(1);
+}
+.recommand .swiper-button-next{
+    position: absolute;
+    left: 0px;
+    left: 18%;
+    top:58%;
+}
+.swiper-button-next img{
+    width: 150px;
+    height: 150px;
+}
+.swiper-button-next:after{
+    font-size: 0;
+}
+/* recommand section end */
+
+
+@media (max-width:1300px) {
+    .recommand .swiper-button-next{
+        left: 10%;
+    }
+    .swiper-button-next img{
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (min-width:992px) and (max-width:1199px) {
+    
+}
+
+@media (max-width:990px) {
+    .left{
+        margin-left: 0;
+    }
+    .recommand .swiper-button-next {
+        display: none;
+    }
+}
+
+@media (max-width:770px) {
+    .product-swiper{
+        margin-right: auto;
+    }
+}
+
+
+@media (max-width:539px) {
+    .navbar{
+        padding: 20px 0;
+    }
+    .navbar-brand{
+        margin: 0 10px;
+    }
+}
+
+@media (max-width:370px) {
+    .product-swiper-text{
+        left: 5%;
+    }
 }
