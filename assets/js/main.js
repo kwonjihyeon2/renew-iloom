@@ -140,3 +140,28 @@ var Nav = (function() {
   
 Nav.init();
 
+//share swiper
+var swiper = new Swiper(".instaswiper", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    grabCursor:true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">'  + "</span>";
+      },
+    },
+});
+var swiper = new Swiper(".youtubeswiper", {
+    slidesPerView: 4,
+    spaceBetween: 20,
+    grabCursor:true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">'  + "</span>";
+      },
+    },
+});
