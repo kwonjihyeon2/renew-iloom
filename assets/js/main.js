@@ -1,8 +1,8 @@
 //header menu
 $(function(){
-    $('.product').on('mouseenter mouseleave',function(){
+    $('.navproduct').on('mouseenter mouseleave',function(){
         $('.product-menu').toggleClass("menu-active");
-        $('.product h1').toggleClass("red-active");
+        $('.navproduct h1').toggleClass("red-active");
     });
     $('.life').on('mouseenter mouseleave',function(){
         $('.life-menu').toggleClass("menu-active");
@@ -26,37 +26,117 @@ $('.set-bg').each(function () {
 });
 
 
-//recommand swiper
+//recommand tab
+var Nav = (function() {
+  
+    var
+        nav 		= $('.product'),
+        section = $('.slidepage'),
+        link		= nav.find('.product__link'),
+        navH		= nav.innerHeight(),
+        isOpen 	= true,
+        hasT 		= false;
+    
+    var toggleNav = function() {
+      nav.toggleClass('product--active');
+      shiftPage();
+    };
+    
+    var switchPage = function(e) {
 
+        var self = $(this);
+        var i = self.parents('.product__item').index();
+        var s = section.eq(i);
+        var a = $('.slidepage--active');
+        var t = $(e.target);
+        
+        if (!hasT) {
+            if (i == a.index()) {
+            return false;
+            }
+            a
+            .addClass('slidepage--hidden')
+            .removeClass('slidepage--active');
+    
+            s.addClass('slidepage--active');
+    
+            hasT = true;
+    
+            a.on('transitionend webkitTransitionend', function() {
+            $(this).removeClass('slidepage--hidden');
+            hasT = false;
+            a.off('transitionend webkitTransitionend');
+            });
+        }
+        return false;
+    };
+    
+    var keyNav = function(e) {
+        var a = $('slidepage--active');
+        var aNext = a.next();
+        var aPrev = a.prev();
+        var i = a.index();
+        
+        if (!hasT) {
+            if (e.keyCode === 37) {
+                if (aPrev.length === 0) {
+                    aPrev = section.last();
+                }
+        
+                hasT = true;
+        
+                aPrev.addClass('slidepage--active');
+                a
+                    .addClass('slidepage--hidden')
+                    .removeClass('slidepage--active');
+        
+                a.on('transitionend webkitTransitionend', function() {
+                    a.removeClass('slidepage--hidden');
+                    hasT = false;
+                    a.off('transitionend webkitTransitionend');
+                });
+            } else if (e.keyCode === 39) {
+    
+                if (aNext.length === 0) {
+                    aNext = section.eq(0)
+                }
+        
+                aNext.addClass('slidepage--active');
+                a
+                    .addClass('slidepage--hidden')
+                    .removeClass('slidepage--active');
+        
+                hasT = true;
+        
+                aNext.on('transitionend webkitTransitionend', function() {
+                    a.removeClass('slidepage--hidden');
+                    hasT = false;
+                    aNext.off('transitionend webkitTransitionend');
+                });
+            } else { return }
+        }  
+    };
+      
+    var bindActions = function() {
+        link.on('click', switchPage);
+        $(document).on('ready', function() {
+            page.css({
+            'transform': 'translateY(' + navH + 'px)',
+            '-webkit-transform': 'translateY(' + navH + 'px)'
+            });
+        });
+        $('body').on('keydown', keyNav);
+    };
+    
+    var init = function() {
+      bindActions();
+    };
+    
+    return {
+      init: init
+    };
+    
+}());
+  
+Nav.init();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var onSwiper = new Swiper(".product-swiper", {
-//     slidesPerView: 1,
-//     spaceBetween: 30,
-//     navigation: {
-//         nextEl: ".swiper-button-next",
-//         clickable: true,
-//     }, breakpoints:{
-//         1200:{
-//             slidesPerView:3,
-//         },
-//         991:{
-//             slidesPerView:2.5,
-//         },
-//         539:{
-//             slidesPerView:1.5,
-//         }
-//     }
-// });

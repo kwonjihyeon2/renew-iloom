@@ -68,9 +68,134 @@
 .recommand{
     width: 100%;
     position: relative;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
+.product {
+    will-change: transform;
+    z-index: 1;
+    transform: translateY(-100%);
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+  .product--active {
+    transform: translateY(0);
+  }
+  .product__list {
+    display: flex;
+  }
+  .product__item {
+    flex: 1;
+    position: relative;
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .product__item:hover .product__label{
+    color: #333;
+  }
+  .product__thumb {
+    display: block;
+    height: 15px;
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .product__thumb:before {
+    content: attr(data-letter);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    text-transform: uppercase;
+    opacity: 0;
+  }
+.product__label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    color: #999;
+    /* margin: 0 30px; */
+}
 
+  .page {
+    height: 500px;
+    will-change: transform;
+    perspective: 400px;
+    overflow: hidden;
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .slidepage {
+    will-change: transform;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translateX(100%);
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .slide--hidden {
+    transform: translateX(-100%);
+  }
+  .slidepage--active {
+    transform: translateX(0) rotateY(0);
+    z-index: 2;
+  }
+  .slidepage__wrapper {
+    width: 100%;
+    max-width: 800px;
+    padding: 0 8vw;
+    position: relative;
+  }
+  .slidepage__title {
+    margin: 0 0 25px 0;
+    font-size: 48px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+  .slidepage p {
+    margin: 0 0 25px 0;
+    font-family: 'Georgia';
+    font-size: 18px;
+    color: #fff;
+    opacity: 0.55;
+  }
+  .slidepage p:last-child {
+    margin-bottom: 0;
+  }
+  @media (max-width: 850px) {
+    .product__label {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .product__label {
+        display: none;
+    }
+    .product__thumb {
+    height: 10px;
+    }
+    .product__thumb:before {
+    font-size: 24px;
+    opacity: 0.7;
+    }
+    .slidepage__title {
+      font-size: 28px;
+    }
+    .slidepage__title:before {
+      top: 3.25rem;
+    }
+    .slidepage p {
+        font-size: 16px;
+      }
+  }
 
 
 /* recommand section end */
