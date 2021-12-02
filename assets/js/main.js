@@ -25,8 +25,35 @@ $('.set-bg').each(function () {
     $(this).css('background-image', 'url(' + bg + ')');
 });
 
+//recommand slider
+var swiperOptions = {
+    loop: true,
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false
+    },
+    slidesPerView: 3,
+    spaceBetween:20,
+    speed: 5000,
+    grabCursor: true,
+    mousewheelControl: true,
+    keyboardControl: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    }
+};
+  
+var AutoSwiper = new Swiper(".auto-Swiper", swiperOptions);
 
-//recommand tab
+//hover change
+$(".hover").mouseleave(
+    function () {
+      $(this).removeClass("hover");
+    }
+);
+
+//service tab
 var Nav = (function() {
   
     var
@@ -165,3 +192,16 @@ var swiper = new Swiper(".youtubeswiper", {
       },
     },
 });
+
+
+
+//aos
+AOS.init();
+
+
+//showroom
+// let controller= new ScrollMagic.Controller();
+
+// let scene = new ScrollMagic.Scene({
+//     triggerElement: '.banner-pd'
+// }).setClassToggle('.effect','show').addTo(controller);

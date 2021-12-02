@@ -45,7 +45,8 @@
     color: #C80A1E;
 }
 .nav-item h1{
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 600;
 }
 .icon{
     font-size: 24px;
@@ -65,7 +66,112 @@
 /* slider section end */
 
 /* recommand section start */
-.recommand{
+.recommand img{
+  width: 100%;
+}
+
+.auto-Swiper {
+  /* height: calc(50vh - 120px); */
+  margin-top: 30px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.auto-Swiper > .swiper-wrapper{
+  transition-timing-function : linear;
+}
+
+.AutoSwiper .swiper-slide {
+  overflow: hidden;
+}
+
+figure.snip1432 {
+  position: relative;
+  overflow: hidden;
+  /* min-width: 230px;
+  max-width: 315px; */
+  width: 100%;
+  color: #ffffff;
+  text-align: left;
+}
+figure.snip1432 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+figure.snip1432 figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+figure.snip1432 figcaption > div {
+  height: 97%;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+figure.snip1432 h2,
+figure.snip1432 h3 {
+  margin: 0;
+  position: absolute;
+  left: 0;
+  padding: 30px;
+  text-transform: uppercase;
+}
+figure.snip1432 h3 {
+  font-size: 1em;
+  bottom: 0;
+  font-weight: 500;
+}
+.h1{
+  font-size: 18px;
+}
+.p{
+  color: #C80A1E;
+}
+
+figure.snip1432.hover figcaption h3:first-of-type{
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+figure.snip1432 h3:nth-of-type(2) {
+  opacity: 0;
+  -webkit-transform: translateY(150%);
+  transform: translateY(150%);
+}
+
+.snip1432 img {
+  filter: brightness(0.8);
+}
+figure.snip1432:hover img{
+  transform: scale(1.1);
+  transition: .6s;
+  filter: brightness(0.5);
+}
+figure.snip1432:hover figcaption h3:first-of-type {
+  -webkit-transform: translateY(150%);
+  transform: translateY(150%);
+  opacity: 0;
+}
+figure.snip1432:hover figcaption h3:nth-of-type(2) {
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+}
+
+/* recommand section end */
+
+
+
+
+/* service section start */
+.service{
     width: 100%;
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -104,8 +210,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 30px;
+    transform: translate(-10%, -20%);
+    font-size: 50px;
     text-transform: uppercase;
     opacity: 0;
   }
@@ -116,12 +222,12 @@
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     color: #999;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
   .page {
     margin-top: 30px;
-    height: 500px;
+    height: 550px;
     will-change: transform;
     perspective: 400px;
     overflow: hidden;
@@ -138,7 +244,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     transform: translateX(100%);
     transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
   }
@@ -151,11 +256,19 @@
   }
   .slidepage__wrapper {
     width: 100%;
+    text-align: left;
     position: relative;
   }
   .slidepage__wrapper img{
-    max-width: 100%;
+    width: 100%;
   }
+  .fix-img{
+    height: 428px;
+  }
+  .round img{
+    border-radius: 20px;
+  }
+
   .slidepage__title {
     /* margin: 0 0 25px 0; */
     font-size: 24px;
@@ -165,16 +278,33 @@
     top:15%;
     right: 5%;
   }
-  .slidepage p {
-    margin: 0 0 25px 0;
-    font-family: 'Georgia';
+  .star-icon{
+    margin-top: 20px ;
+  }
+  .star-icon span{
+    width: 22px;
+    height: 22px;
+  }
+  .slidepage h1{
     font-size: 18px;
-    color: #fff;
-    opacity: 0.55;
+    margin-top: 20px;
+    font-weight: 600;
   }
-  .slidepage p:last-child {
-    margin-bottom: 0;
+  .slidepage p {
+    color: #666;
+    margin-top: 20px;
+    font-size: 14px;
   }
+  .slidepage .span-info {
+    margin-top: 10px;
+    color: #666;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  
   @media (max-width: 850px) {
     .product{
       margin-top: 16px;
@@ -209,32 +339,62 @@
   }
 
 
-/* recommand section end */
+/* service section end */
+
+
 
 .banner{
   /* background: url('../img/mainbanner.png') no-repeat center; */
   background-size: cover;
   cursor: pointer;
-  padding: 50px 0;
-  background-color: #F0F0F0;
 }
-.banner img{
+
+.banner-pd {
+  background-color: #F0F0F0;
+  padding: 50px 0;
+}
+
+/* .effect{
+  opacity: 0;
+  width: 0;
+  transition: 1s;
+} */
+/* .effect.show{
+  opacity: 1;
+  width: 100%;
+} */
+
+.banner-pd img{
   width: 100%;
 }
 
-.service img{
-  width: 100%;
-}
+
+
+/* share start */
 .share-content{
   margin-top: 30px;
 }
-
+.more{
+  margin-top:30px;
+  align-items: center;
+}
+.more .mont a{
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #333;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+.more .mont:hover a{
+  color: #C80A1E;
+  border-bottom: 2px solid #C80A1E;
+}
 .share-content h1{
   font-size: 24px;
   font-family: 'Montserrat',sans-serif;
 }
 .share-content .swiper{
-  padding: 30px 0 30px 0;
+  padding: 20px 0px 50px 0;
 }
 
 .share-content .swiper img{
@@ -252,10 +412,64 @@
   background: #333;
   opacity: 1;
 }
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom: 20px;
+}
+
+
+
+
+
+
+footer{
+  background-color: #f0f0f0;
+  font-size: 12px;
+  margin-top: 100px;
+  padding: 80px 0;
+}
+
+
+.footer_inner_item a img{
+  margin: 10px auto;
+}
+
+.footer_inner_item ul dl{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.footer_inner_box .footer_inner_item ul li{
+  margin: 10px auto;
+}
+.footer_inner_box .footer_inner_item dl dt {
+  width: 110px;
+}
+
+.item_title{
+  font-weight: 600;
+}
+.f13 p{
+  margin-bottom: 10px;
+}
+
+.btnLst.smllSz.btnStl .btn.text {
+  position: relative;
+  display: inline-block;
+  /* float: left; */
+  padding: 5px 12px;
+  font-size: 12px;
+  line-height: 18px;
+  border-radius: 2px;
+  border: solid 1px #aaa;
+  background-color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
 @media (min-width:1500px){
-    .recommand .swiper-button-next {
+    /* .recommand .swiper-button-next {
         left:500px;
-    }
+    } */
 }
 
 
