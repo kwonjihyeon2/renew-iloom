@@ -181,8 +181,8 @@ var swiper = new Swiper(".instaswiper", {
     },
 });
 var swiper = new Swiper(".youtubeswiper", {
-    slidesPerView: 4,
-    spaceBetween: 20,
+    slidesPerView: 3,
+    spaceBetween: 50,
     grabCursor:true,
     pagination: {
       el: ".swiper-pagination",
@@ -193,6 +193,8 @@ var swiper = new Swiper(".youtubeswiper", {
     },
 });
 
+//instagram effect
+
 
 
 //aos
@@ -200,8 +202,8 @@ AOS.init();
 
 
 //showroom
-// let controller= new ScrollMagic.Controller();
-
-// let scene = new ScrollMagic.Scene({
-//     triggerElement: '.banner-pd'
-// }).setClassToggle('.effect','show').addTo(controller);
+$('.on-mouse').on("mouseleave mouseenter",
+    function(){
+        $('.img-text').toggleClass('add');
+    }
+);
