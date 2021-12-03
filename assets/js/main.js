@@ -14,9 +14,21 @@ $(function(){
     });
 })
 
+//TOP
+$(".menu-icon").on("click",function(){
+    $('.icon-hide').toggle();
+})
+
+
 //main slide swiper
 var swiper = new Swiper(".main-Swiper", {
-    // autoplay 나중에 넣기
+    effect : 'fade',
+    loop:true,
+    autoplay: {
+        delay: 3500,
+        disableOnInteraction: false
+    },
+    speed:800,
 });
 
 //main slider background setting
@@ -193,17 +205,39 @@ var swiper = new Swiper(".youtubeswiper", {
     },
 });
 
-//instagram effect
-
-
 
 //aos
 AOS.init();
 
-
 //showroom
-$('.on-mouse').on("mouseleave mouseenter",
-    function(){
-        $('.img-text').toggleClass('add');
-    }
-);
+var controller = new ScrollMagic.Controller();
+
+var scene = new ScrollMagic.Scene({
+    triggerElement:'.banner'
+})
+.setClassToggle('.banner-pd','show').addTo(controller);
+
+//Top
+window.onscroll = function(){myFunction()};
+// 스크롤 할때 myFunction() 실행
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+var Top = document.getElementsByClassName("gotoTop")
+
+function myFunction() {
+  if (window.pageYOffset > 500) {
+    header.classList.add("sticky")
+  } else {
+    header.classList.remove("sticky");
+  }
+  if(window.pageYOffset>500){
+        $('.gotoTop').css("display","block")
+  } else{
+        $('.gotoTop').css("display","none")
+  }
+}
+
+$(".gotoTop").on("click", function(){
+    $(window).scrollTop(0);
+})
