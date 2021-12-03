@@ -44,7 +44,7 @@ var swiperOptions = {
       delay: 1,
       disableOnInteraction: false
     },
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween:20,
     speed: 5000,
     grabCursor: true,
@@ -53,6 +53,14 @@ var swiperOptions = {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
+    },
+    breakpoints:{
+        991:{
+            slidesPerView: 3,
+        },
+        767:{
+            slidesPerView: 2,
+        }
     }
 };
   
@@ -181,7 +189,7 @@ Nav.init();
 
 //share swiper
 var swiper = new Swiper(".instaswiper", {
-    slidesPerView: 4,
+    slidesPerView: 1,
     spaceBetween: 20,
     grabCursor:true,
     pagination: {
@@ -191,9 +199,20 @@ var swiper = new Swiper(".instaswiper", {
         return '<span class="' + className + '">'  + "</span>";
       },
     },
+    breakpoints:{
+        991:{
+            slidesPerView: 4,
+        },
+        767:{
+            slidesPerView: 3,
+        },
+        540:{
+            slidesPerView: 2,
+        }
+    }
 });
 var swiper = new Swiper(".youtubeswiper", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 50,
     grabCursor:true,
     pagination: {
@@ -203,6 +222,14 @@ var swiper = new Swiper(".youtubeswiper", {
         return '<span class="' + className + '">'  + "</span>";
       },
     },
+    breakpoints:{
+        991:{
+            slidesPerView: 3,
+        },
+        767:{
+            slidesPerView: 2,
+        },
+    }
 });
 
 

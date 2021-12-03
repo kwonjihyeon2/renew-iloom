@@ -274,9 +274,7 @@ figure.snip1432:hover figcaption h3:nth-of-type(2) {
 .slidepage__wrapper img{
   width: 100%;
 }
-.fix-img{
-  height: 428px;
-}
+
 .round img{
   border-radius: 20px;
 }
@@ -444,6 +442,7 @@ figure.snip1432:hover figcaption h3:nth-of-type(2) {
   font-size: 30px;
   margin-bottom: 10px;
   font-weight: 400;
+  word-break: keep-all;
 }
 
 .banner-text span{
@@ -633,10 +632,10 @@ footer{
 }
 
 
-@media (min-width:1500px){
-  /* .recommand .swiper-button-next {
-      left:500px;
-  } */
+@media (min-width:1700px){
+  .page{
+    height: 680px;
+  }
 }
 
 
@@ -659,6 +658,17 @@ footer{
       margin-right: auto;
   }
 }
+@media (max-width:767px) {
+  .footer_inner_box {
+    margin-left: 0;
+    margin-right: 0;
+    align-items: center;
+  }
+  .footer_inner_box ul{
+    margin-top: 20px;
+  }
+}
+
 
 
 @media (max-width:539px) {
@@ -667,6 +677,9 @@ footer{
   }
   .navbar-brand{
       margin: 0 10px;
+  }
+  .more h1 span{
+    display: none;
   }
 }
 
