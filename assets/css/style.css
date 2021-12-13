@@ -659,6 +659,12 @@ footer{
   }
 }
 @media (max-width:767px) {
+  .banner{
+    padding-top: 130px;
+  }
+  .click-view {
+    right: 5%;
+}
   .footer_inner_box {
     margin-left: 0;
     margin-right: 0;
